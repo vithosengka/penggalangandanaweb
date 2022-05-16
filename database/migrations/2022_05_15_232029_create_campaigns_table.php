@@ -15,6 +15,19 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string('title');
+            $table->string('slug')->nullable();
+            $table->string('short_description');
+            $table->longText('body');
+            $table->integer('view_count');
+            $table->enum('status', ['public', 'pending', 'archived'] )
+                  ->default('pending');
+            $table->integer('nominal');
+            $table->integer('goal');
+            $table->dateTime('end_date');
+            $table->text('note')->nullable();
+            $table->string('receiver');
             $table->timestamps();
         });
     }

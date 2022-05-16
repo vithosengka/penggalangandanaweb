@@ -15,6 +15,8 @@ class CreateCategoryCampaignTable extends Migration
     {
         Schema::create('category_campaign', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('category_id');
+            $table->bigInteger('campaign_id');
             $table->timestamps();
         });
     }
