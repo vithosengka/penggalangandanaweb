@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
             $table->text('about')
                   ->nullable();
             $table->string('path_image') ->nullable();
-            $table->bigInteger('role_id');
+            $table->unsignedBigInteger('role_id');
             $table->rememberToken();
             $table->timestamps();
 
