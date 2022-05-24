@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->enum('gender', ['laki-laki', 'perempuan'])
                   ->nullable();
             $table->date('birt_date')
